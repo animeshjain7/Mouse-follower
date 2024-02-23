@@ -1,8 +1,6 @@
 const coords = { x: 0, y: 0 };
 const wrapper = document.getElementById("wrapper");
-// console.log(wrapper);
 const circles = document.querySelectorAll(".circle");
-// console.log(circles);
 const colors = [
   "#ffb56b",
   "#fdaf69",
@@ -63,7 +61,6 @@ function animateCircles() {
 animateCircles();
 
 window.addEventListener("mousemove", function xyz(e) {
-  // console.log(e.clientX, e.clientY);
   wrapper.style.left = e.clientX - 11 + "px";
   wrapper.style.top = e.clientY - 11 + "px";
 });
@@ -85,14 +82,14 @@ const logButtons = (e) => {
 function animateScaleUp() {
   if (scaling) wrapperScaleValue += 0.01; // Increase scale value
   wrapper.style.transform = `scale(${wrapperScaleValue})`; // Apply the scale transformation
-  // requestAnimationFrame(animateScaleUp); // Call animateScale recursively
+  requestAnimationFrame(animateScaleUp); // Call animateScale recursively
 }
 
 function animateScaleDown() {
   if (!scaling && wrapperScaleValue > 1) {
     wrapperScaleValue -= 0.01; // Decrease scale value
     wrapper.style.transform = `scale(${wrapperScaleValue})`; // Apply the scale transformation
-    // requestAnimationFrame(animateScaleDown); // Call animateScale recursively
+    requestAnimationFrame(animateScaleDown); // Call animateScale recursively
   }
 }
 
